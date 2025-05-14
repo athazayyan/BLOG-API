@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET //id/:id - Ambil post berdasarkan ID
-router.get('//id/:id', async (req, res) => {
+router.get('/id/:id', async (req, res) => {
   try {
     const post = await getPostById(req.params.id);
     res.json(post);
@@ -31,7 +31,7 @@ router.get('//id/:id', async (req, res) => {
 });
 
 // GET //title/:title - Ambil post berdasarkan judul
-router.get('//title/:title', async (req, res) => {
+router.get('/title/:title', async (req, res) => {
   try {
     const post = await getPostByTitle(req.params.title);
     res.json(post);
@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
 });
 
 // PUT //:id - Update post
-router.put('//:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const updated = await updatePost(req.params.id, req.body);
     res.json(updated);
@@ -61,7 +61,7 @@ router.put('//:id', async (req, res) => {
 });
 
 // DELETE //:id - Hapus post
-router.delete('//:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     await deletePost(req.params.id);
     res.json({ message: "Post deleted" });
